@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            /* display: inline;  can not change anything */
+            display: inline-block;  
+            width: 500px;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 300px;
+            background-color: yellow;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: auto auto auto ;
+            column-gap: 20px;
+            row-gap: 10px;
+            justify-content: space-around;
+            align-items: center;
+            background-color: plum;
+            height: 300px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS display property</h1>
+    <h2>inline vs inline-block</h2>
+    <li>Home</li>
+    <li>Services</li>
+    <li>Projects</li>
+    <li>About</li>
+
+    <h2>Flexbox</h2>
+    <div class="flex">
+      <div>Child1Child1</div>
+      <div>Child2Child2</div>
+      <div>Child3Child3</div>
+      <div>Child4Child4</div>
+      <div>Child5Child5</div>
+      <div>Child6Child6</div>   
+    </div>
+
+
+    <h2>Grid</h2>
+    <div class="grid">
+      <div>Child1</div>
+      <div>Child2</div>
+      <div>Child3</div>
+      <div>Child4</div>
+      <div>Child5</div>
+      <div>Child6</div>   
+    </div>
+</body>
+</html>
