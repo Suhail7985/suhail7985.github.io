@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.search-bar input {
+  padding: 8px;
+  width: 300px;
+}
+
+.contact-cart span {
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.main-menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.main-menu ul li {
+  margin: 0 15px;
+}
+
+.main-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background: #e9f4ff;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero-content h1 {
+  font-size: 32px;
+}
+
+.hero-content p {
+  font-size: 16px;
+  color: #555;
+}
+
+.hero-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-img img {
+  width: 200px;
+}
+
+.offers {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.offer-box {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.green {
+  background: #98c379;
+}
+
+.orange {
+  background: #d19a66;
+}
+
+.category {
+  padding: 20px;
+}
+
+.category-list {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.category-list div {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.trending {
+  padding: 20px;
+  background: white;
+}
+
+.products {
+  display: flex;
+  gap: 20px;
+}
+
+.product {
+  background: #f9f9f9;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.product img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+footer {
+  background: #333;
+  color: white;
+  padding: 20px;
+}
+
+.footer-cols {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+footer input[type="email"] {
+  padding: 6px;
+  margin-top: 5px;
+  width: 160px;
+}
+
+footer button {
+  padding: 6px 12px;
+  margin-top: 5px;
+  background: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer .copyright {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
