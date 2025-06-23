@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body onload="showProducts()">
+  <h1>Shopping Cart</h1>
+  <div class="nav-container"></div>
+  <ul>
+    <li> <a href="#" onclick="showProducts()" class="nav-button">Home</a></li>
+    <li> <a href="#" onclick="displayCart()" class="nav-button">Cart<span id="cart-count-text"></span></a></li>
+
+  </ul>
+  </div>
+  <hr />
+
+  <div id="product-list-section">
+    <h2>Products</h2>
+    <div id="product-list"></div>
+  </div>
+
+  <div id="cart-section" style="display: none;">
+    <h2>Your Cart</h2>
+    <div id="root"></div>
+  </div>
+
+  <hr />
+  <h4>Shopping Cart. Copyright 2025. All rights reserved</h4>
+
+  <script src="app.js"></script>
+</body>
+</html>
