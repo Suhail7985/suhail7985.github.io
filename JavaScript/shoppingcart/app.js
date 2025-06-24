@@ -45,8 +45,8 @@ function displayCart() {
       root.innerHTML += `
         <div>
           ${product.name} - $${product.price} × ${qty} = $${subtotal}
-          <button onclick="increment(${product.id})">+</button>
           <button onclick="decrement(${product.id})">−</button>
+          <button onclick="increment(${product.id})">+</button>
         </div>
       `;
     }
