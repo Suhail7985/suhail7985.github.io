@@ -62,6 +62,7 @@ db.employees.updateMany(
     {$addToSet:{location:'LA'}})  //add one time in array if not exist 
 
 
-db.employees.updateMany(
-    {},
-    {$pop:{location:-1}})     //1 means last item will remove adn -1 for first item
+    db.employees.updateMany(
+        {},
+        {$pop:{location:-1}})     //1 means last item will remove adn -1 for first item
+

@@ -1,120 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Header</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohd Suhail | Full-Stack Developer</title>
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background-color: #222;
-      color: white;
-    }
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="ball.png" />
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #00adb5;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 50px 30px;
-      background-color: #f8f9fa;
-    }
-
-    .hero-left {
-      max-width: 50%;
-    }
-
-    .hero-left h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #222;
-    }
-
-    .hero-left p {
-      font-size: 18px;
-      margin-bottom: 30px;
-      color: #555;
-    }
-
-    .hero-left button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      background-color: #00adb5;
-      color: white;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .hero-left button:hover {
-      background-color: #007b83;
-    }
-
-    .hero-right img {
-      width: 400px;
-      max-width: 100%;
-      border-radius: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="header">
+    <h1 class="brand">Mohd Suhail</h1>
 
-<header>
-  <div class="logo">Mohd Suhail</div>
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <!-- mobile toggle -->
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">
+      &#9776;
+    </button>
 
-<section class="hero">
-  <div class="hero-left">
-    <h1>MERN Stack Developer</h1>
-    <p>I build full-stack web applications using MongoDB, Express, React, and Node.js.</p>
-    <button onclick="location.href='p1'">View My Projects</button>
-  </div>
-  <div class="hero-right">
-    <img src="abc.jpg" alt="Profile Image">
-  </div>
+    <nav id="navbar" class="nav">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero__text">
+      <h2>Full-Stack Developer <span class="accent">| MERN & LAMP</span></h2>
+      <p>I turn ideas into secure, scalable web apps and love solving tricky backend problems while keeping UX delightful.</p>
+      <div class="cta">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="btn btn--outline">Hire Me</a>
+      </div>
+    </div>
+    <figure class="hero__img">
+      <!-- Put the portrait you uploaded in /img/profile.jpg -->
+      <img src="img/profile.jpg" alt="Portrait of Mohd Suhail in a black suit and glasses">
+    </figure>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <h2 class="section__title">Projects</h2>
+    <div class="card-grid">
+      <!-- Repeat this .card for every project -->
+      <article class="card">
+        <h3 class="card__title">ATS Score Checker</h3>
+        <p class="card__body">
+          MERN application that analyses résumés for ATS compatibility in real time.
+        </p>
+        <span class="tag">React</span><span class="tag">Node</span><span class="tag">WebSockets</span>
+      </article>
+
+      <article class="card">
+        <h3 class="card__title">Online Food Delivery System</h3>
+        <p class="card__body">
+          End-to-end PHP + MySQL platform with live tracking and secure payment integration.
+        </p>
+        <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Stripe</span>
+      </article>
+
+      <article class="card">
+        <h3 class="card__title">Hotel Management System</h3>
+        <p class="card__body">
+          C++ OOP project covering reservation, billing, and reporting modules.
+        </p>
+        <span class="tag">C++</span><span class="tag">DSA</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section section--alt">
+    <h2 class="section__title">Services</h2>
+    <div class="service-grid">
+      <div class="service">
+        <h3>Web App Development</h3>
+        <p>SPA/PWA development with React + Vite, server-side rendered Next.js when SEO matters.</p>
+      </div>
+      <div class="service">
+        <h3>Backend APIs</h3>
+        <p>REST & GraphQL APIs in Node/Express or Laravel, dockerized and CI/CD-ready.</p>
+      </div>
+      <div class="service">
+        <h3>Performance & SEO</h3>
+        <p>Core-Web-Vitals audits, page-speed optimisation, structured-data & Lighthouse 99/100.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+<section id="about" class="section reveal">
+  <h2 class="section__title">About Me</h2>
+
+  <p>
+    2<sup>+</sup> years crafting full-stack solutions and 150+ LeetCode problems cracked.
+    When I’m not coding you’ll catch me reading about systems design or playing CTF challenges.
+  </p>
+
+  <h3>Skills &amp; Tools</h3>
+  <ul class="skills">
+    <li>C++</li><li>JavaScript</li><li>PHP</li><li>Node.js</li>
+    <li>React</li><li>MongoDB</li><li>MySQL</li><li>Git</li>
+  </ul>
 </section>
 
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section section--alt">
+    <h2 class="section__title">Get In Touch</h2>
+    <div class="contact-grid">
+      <!-- contact form -->
+      <form id="contactForm" class="contact-form">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" rows="6" placeholder="Message" required></textarea>
+        <button type="submit" class="btn">Send</button>
+        <p id="formStatus" class="form-status"></p>
+      </form>
+
+      <!-- contact details -->
+      <address class="contact-details">
+        <p><strong>Location :</strong> Phagwara, Punjab</p>
+        <p><strong>Email :</strong> <a href="mailto:suhailmansoori7985@gmail.com">suhailmansoori7985@gmail.com</a></p>
+        <p><strong>Phone :</strong> <a href="tel:+919555635456">+91 95556 35456</a></p>
+        <p><strong>LinkedIn :</strong> <a target="_blank" href="https://linkedin.com/in/mohdsuhail01/">/mohdsuhail01</a></p>
+        <p><strong>GitHub :</strong> <a target="_blank" href="https://github.com/Suhail7985">/Suhail7985</a></p>
+      </address>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    © 2025 Mohd Suhail. All rights reserved.
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>

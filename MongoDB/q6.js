@@ -117,3 +117,45 @@ db.employees.aggregate([
 ])
 
 
+
+db.employees.getIndexes()  //to get the index name
+
+db.employees.createIndex({"email":1})    // to create index 
+
+db.employees.dropIndex("email_1")  //to drop the index
+
+db.employees.find({email:"john@gmail.com"}).explain("executionStats")  //to get the execution stats of the query
+
+
+
+
+
+
+db.students.insertMany([
+    { name: "Krish", score: 90 , country: "India"},
+    { name: "Krish", score: 80 , country: "India"},
+    { name: "Krish", score: 70 , country: "India"},
+    { name: "Jane", score: 60 , country: "UK"},
+    { name: "John", score: 50 , country: "UK"},
+    { name: "Jane", score: 40 , country: "UK"},
+])
+
+db.students.aggregate([
+
+  {
+    $group: {
+      _id:   { country: "$country", name: "$name" },
+      total: { $sum: "$score" }     
+    }
+  },
+
+  {
+    $project: {
+      _id:     0,
+      country: "$_id.country",
+      name:    "$_id.name",
+      total:   1
+    }
+  }
+]);
+

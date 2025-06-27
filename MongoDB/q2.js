@@ -29,3 +29,8 @@ db.employees.insertMany([
 
 db.employees.find()
 db.employees.insertOne()
+
+db.users.drop()
+
+db.users.find({},{_id:0,name:1,age:1})
+db.users.find({},{_id:false,name:true,age:true})
