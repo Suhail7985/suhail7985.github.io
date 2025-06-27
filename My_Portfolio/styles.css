@@ -85,10 +85,19 @@ body {
   color: var(--clr-accent);
 }
 
+/* NEW: wrapper to keep the circle centred */
+.hero__img {
+  display: flex;
+  justify-content: center;
+}
+
 .hero__img img {
-  width: 100%;
-  border-radius: var(--radius);
+  width: 160px;               /* fixed size */
+  height: 160px;
+  border-radius: 50%;         /* makes it circular */
+  object-fit: cover;          /* crops to fit circle */
   box-shadow: var(--shadow);
+  border: 4px solid #fff;
 }
 
 /* —— generic section styling —— */
@@ -243,7 +252,7 @@ body {
   }
 
   .hero__img img {
-    max-width: 240px;
+    max-width: 160px;          /* keep circle size on mobile */
     margin: 0 auto;
   }
 }
@@ -254,14 +263,12 @@ body.dark-mode {
   color: #eee;
 }
 
-body.dark-mode .header {
-  background: #1e1e1e;
+body.dark-mode .section--alt {
+  background: #1a1a1a;
 }
 
-body.dark-mode .nav a {
-  color: #fff;
-}
-
+body.dark-mode .header        { background: #1e1e1e; }
+body.dark-mode .nav a         { color: #fff; }
 body.dark-mode .card,
 body.dark-mode .service,
 body.dark-mode .contact-form input,
@@ -270,10 +277,9 @@ body.dark-mode .contact-form textarea {
   color: #eee;
   border-color: #333;
 }
-
-body.dark-mode .footer {
-  background: #000;
-  color: #aaa;
+body.dark-mode .footer        { background: #000; color: #aaa; }
+body.dark-mode .section--alt a {
+  color: var(--clr-accent);
 }
 
 /* —— scroll-reveal animation —— */
@@ -287,4 +293,3 @@ body.dark-mode .footer {
   opacity: 1;
   transform: translateY(0);
 }
-    
