@@ -92,8 +92,8 @@ body {
 }
 
 .hero__img img {
-  width: 160px;               /* fixed size */
-  height: 160px;
+  width: 250px;               /* fixed size */
+  height: 250px;
   border-radius: 50%;         /* makes it circular */
   object-fit: cover;          /* crops to fit circle */
   box-shadow: var(--shadow);
@@ -365,3 +365,4 @@ body.dark-mode .project-card {
 body.dark-mode .tags span {
   background: var(--clr-accent);
 }
+  
