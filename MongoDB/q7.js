@@ -170,3 +170,63 @@ db.studentInfo.aggregate([
             }
 }       
 ])
+
+
+
+
+db.employees.aggregate([{$project:{_id:0,name:1,salary:1,Grade:"Grade A"}}])
+
+//salary requirement greater 3000 have grade A
+db.employees.aggregate([
+    {$project:{
+        _id:0,
+        name:1,
+        salary:1,
+        Grade:{$cond:[{$gt:["$salary",3000]},"Grade A","Grade B"]}
+    }}
+])
+
+//or
+
+db.employees.aggregate([
+    {$project:{
+        _id:0,
+        name:1,
+        salary:1,
+        Grade:{$cond:{
+            if:{$gt:["$salary",3000]},
+            then:"Grade A",
+            else:"Grade B"
+        }}}
+    },
+    {
+        //store the result in new collection 
+        $out: "GradeWiseSalary"
+    }
+])
+
+
+db.createView("viewname","collectionname",[query])
+
+
+db.createView("salaryview", "employees", [
+{
+    $project: {
+    _id: 0,
+    name: 1,
+    salary: 1,
+    Grade: {
+    $cond: {
+    if: { $gte: ["$salary", 3000] },
+    then: "Grade A",
+    else: "Grade B"
+        }
+    }}}
+])
+
+
+
+
+
+//mongodump
+//mongodump -d lpu -o E:\lpubackup

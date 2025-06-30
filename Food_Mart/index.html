@@ -1,106 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FoodMart Grocery Store</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOODMART - Online Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header class="top-header">
-    <div class="logo">🍊 <strong>FOODMART</strong></div>
-    <div class="search-bar">
-      <input type="text" placeholder="Search for more than 20,000 products">
-    </div>
-    <div class="contact-cart">
-      <span>📞 +980-34984089</span>
-      <span>Your Cart: <strong>$1290.00</strong></span>
-    </div>
-  </header>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">FOODMART</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-heart"></i>
+                <div class="cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>2</span> / $1290.00
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <nav class="main-menu">
-    <ul>
-      <li><a href="#">Departments</a></li>
-      <li><a href="#">Women</a></li>
-      <li><a href="#">Men</a></li>
-      <li><a href="#">Kids</a></li>
-      <li><a href="#">Accessories</a></li>
-      <li><a href="#">Sale</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
-  </nav>
+    <main>
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-main-banner">
+                    <div class="banner-content">
+                        <span>100% Natural</span>
+                        <h2>Fresh Smoothie & Summer Juice</h2>
+                        <p>Get the best summer juice & smoothies at great prices with 100% natural ingredients.</p>
+                        <a href="#" class="btn">Shop Now</a>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1524593454654-5a06968806c1?auto=format&fit=crop&w=300&q=80" alt="Fresh Smoothie">
+                </div>
+                <div class="hero-side-banners">
+                    <div class="side-banner">
+                        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=300&q=60" alt="Fruits & Vegetables">
+                        <div class="banner-content">
+                            <span>20% Off</span>
+                            <h3>Fruits & Vegetables</h3>
+                            <a href="#" class="btn-small">Shop Collection</a>
+                        </div>
+                    </div>
+                    <div class="side-banner">
+                        <img src="https://images.unsplash.com/photo-1509440159598-0249088772ff?auto=format&fit=crop&w=300&q=60" alt="Baked Products">
+                        <div class="banner-content">
+                            <span>15% Off</span>
+                            <h3>Baked Products</h3>
+                            <a href="#" class="btn-small">Shop Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>100% Natural</h2>
-      <h1>Fresh Smoothie & Summer Juice</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <button>Shop Now</button>
-    </div>
-    <div class="hero-img">
-      <img src="https://i.imgur.com/NxQOSKr.png" alt="Smoothie Bottle"/>
-    </div>
-  </section>
+        <section class="categories-section">
+            <div class="container">
+                <h2>Category</h2>
+                <div class="categories-slider">
+                    <div class="category-item">
+                        <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-vegetable-grocery-flatart-icons-outline-flatarticons.png" alt="Fruits">
+                        <span>Fruits & Vegs</span>
+                    </div>
+                    <div class="category-item">
+                        <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-bread-bakery-flatart-icons-outline-flatarticons.png" alt="Breads">
+                        <span>Breads & Sweets</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="offers">
-    <div class="offer-box green">
-      <h3>20% Off</h3>
-      <p>Fruits & Vegetables</p>
-    </div>
-    <div class="offer-box orange">
-      <h3>15% Off</h3>
-      <p>Baked Products</p>
-    </div>
-  </section>
+        <section class="new-arrivals-section">
+            <div class="container">
+                <h2>Newly Arrived Brands</h2>
+                <div class="new-arrivals-slider">
+                    <div class="brand-item">
+                        <img src="https://images.unsplash.com/photo-1506812574058-fc75fa93fead?auto=format&fit=crop&w=90&q=60" alt="Amber Jar">
+                        <h4>Amber Jar</h4>
+                        <p>Honey best nectar you wish to get</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="category">
-    <h2>Category</h2>
-    <div class="category-list">
-      <div>Fruits & Veges</div>
-      <div>Breads & Sweets</div>
-      <div>Fruits & Veges</div>
-      <div>Fruits & Veges</div>
-    </div>
-  </section>
+        <section class="trending-products-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Trending Products</h2>
+                    <div class="product-filters">
+                        <a href="#" class="active">ALL</a>
+                        <a href="#">FRUITS & VEGES</a>
+                        <a href="#">JUICES</a>
+                    </div>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1571687088282-6817aae64a29?auto=format&fit=crop&w=300&q=80" alt="Melon Juice">
+                            <span class="sale-tag">Sale</span>
+                            <div class="product-overlay-icons">
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h4>Sunstar Fresh Melon Juice</h4>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p class="product-price">$18.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <section class="trending">
-    <h2>Trending Products</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://i.imgur.com/9gqUQZB.png" alt="Banana">
-        <p>Sunstar Fresh Melon Juice</p>
-        <span>$18.00</span>
-      </div>
-      <div class="product">
-        <img src="https://i.imgur.com/MGZzXh3.png" alt="Cucumber">
-        <p>Sunstar Fresh Melon Juice</p>
-        <span>$18.00</span>
-      </div>
-      <div class="product">
-        <img src="https://i.imgur.com/nbAC1mt.png" alt="Milk Box">
-        <p>Sunstar Fresh Melon Juice</p>
-        <span>$18.00</span>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-cols">
-      <div>
-        <h4>Ultras</h4>
-        <p>About us<br>Careers<br>Affiliate Program</p>
-      </div>
-      <div>
-        <h4>Customer Service</h4>
-        <p>FAQ<br>Returns & Refunds<br>Delivery Info</p>
-      </div>
-      <div>
-        <h4>Subscribe</h4>
-        <input type="email" placeholder="Email Address">
-        <button>Subscribe</button>
-      </div>
-    </div>
-    <p class="copyright">© 2023 Foodmart. All rights reserved.</p>
-  </footer>
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col footer-about">
+                <div class="logo">FOODMART</div>
+            </div>
+            <div class="footer-col">
+                <h4>Ultras</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Terms & Refund</a></li>
+                    <li><a href="#">Wholesale Programs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">Delivery Information</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-newsletter">
+                <h4>Subscribe Us</h4>
+                <p>Subscribe our grand offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Here">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2023 Foodmart. All right reserved</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
