@@ -1,3 +1,6 @@
+// first install mongodb in the perticular folder then run the following script 
+//npm install mongodb
+/// node q12.mjs
 import { MongoClient } from "mongodb";
 const uri = "mongodb://127.0.0.1:27050/"
 const client = new MongoClient(uri);

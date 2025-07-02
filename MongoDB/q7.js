@@ -229,4 +229,8 @@ db.createView("salaryview", "employees", [
 
 
 //mongodump
-//mongodump -d lpu -o E:\lpubackup
+//mongodump -d lpu -o E:\lpubackup      //for backup
+
+
+//for restore the data 
+// mongorestore -d lpu E:\lpubackup\lpu

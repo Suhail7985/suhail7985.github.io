@@ -1,0 +1,10 @@
+/nodejs/nodeapp/node_modules
+/nodejs/nodeapp/.env
+
+
+
+/reactjs/reactapp/node_modules
+/reactjs/reactapp/.giignore
+/reactjs/reactapp/dist
+/reactjs/reactapp/.env
+.giignore
