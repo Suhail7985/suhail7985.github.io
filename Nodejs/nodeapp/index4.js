@@ -35,6 +35,9 @@ else{
     res.send("Access Denied")
 }
 }
+
+
+
 app.use("/:name",auth,(req,res)=>
     {
         res.send("Hello world")

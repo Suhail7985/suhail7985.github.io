@@ -4,22 +4,24 @@
 //post >localhost:8080/register > register user
 //post > localhost:8080/  > login user
 
+
 import express from 'express';
+import auth from './auth.js';
 const app = express ()
 app.listen(8080,()=> {
     console.log('server is running on port 8080')
 });
 app.use(express.json());
 let users = []; 
-const auth=( req,res,next) =>{
-    if(req.headers.authorization)
-    {
-        next();
-    }
-    else{
-        res.json({message: "Invalid Token"});
-    }
-};
+// const auth=( req,res,next) =>{
+//     if(req.headers.authorization)
+//     {
+//         next();
+//     }
+//     else{
+//         res.json({message: "Invalid Token"});
+//     }
+// };
 
 
 app.get('/',auth,(req,res)=>
