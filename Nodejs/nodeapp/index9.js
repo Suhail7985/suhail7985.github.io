@@ -1,24 +1,13 @@
 import express from "express";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 const app = express();
 const SECRET = "sometext";
 app.listen(8080, () => {
   console.log("Server started");
 });
-const users = [
-  {
-    name: "John",
-    email: "john@email.com",
-    password: "1234",
-    role: "user",
-  },
-  {
-    name: "Cathy",
-    email: "cathy@email.com",
-    password: "1234",
-    role: "admin",
-  },
-];
+let users = [];
+
 app.use(express.json());
 
 const authenticate = (req, res, next) => {
@@ -39,7 +28,7 @@ const authorize = (role)=>{
         if (req.role === role) {
             next();
         } else {
-            res.json({ message: "Unauthorized Access"});
+          return res.json({ message: "Unauthorized Access"});
         }
 }
 }
@@ -48,6 +37,7 @@ const authorize = (role)=>{
 
 
 app.post("/login", (req, res) => {
+
   const { email, password } = req.body;
   const found = users.find(
     (user) => user.email === email && user.password === password
@@ -59,6 +49,16 @@ app.post("/login", (req, res) => {
     res.status(400).json({ message: "Access Denied" });
   }
 });
+
+app.post("/register",(req,res)=>{
+    const {name,email,password,role}=req.body;
+    const hashedPassword = bcrypt.hash(password, 10);
+    const user = {name,email,password:hashedPassword,role};
+    users.push(user);
+    res.json(user)
+
+    })
+
 
 app.get("/users", authenticate, authorize("admin"), (req, res) => {
   res.json(users);
