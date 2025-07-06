@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 import express from "express";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+
+const SECRET = "secretkey";
 const app = express();
 app.use(express.json());
 //interact with data base
@@ -41,4 +44,53 @@ catch(err){
 }
 });
 
+//login register and also return token number
+
+app.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const existingUser = await userModel.findOne({ email });
+    if (existingUser) {
+      const isMatch = await bcrypt.compare(password, existingUser.password);
+      if (isMatch) {
+        const userObj = {
+          username: existingUser.username,
+          email: existingUser.email,
+          role: existingUser.role,
+        };
+        const token = jwt.sign(userObj, SECRET, { expiresIn: "1h" });
+        res.status(200).json({ user: userObj, token });
+      } else {
+        res.status(400).json({ message: "Invalid Password" });
+      }
+    } else {
+      res.status(400).json({ message: "User not found" });
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "Something went wrong" });
+  }
+});
+
+//update user through email
+//role: admin
+
+const updateRole = async (req, res) =>
+    {
+        const { email } = req.params;
+        const { role } = req.body;
+        const user = await userModel.findOne({ email });
+        if (user) {
+            user.role = role;
+            await user.save();
+            res.status(200).json({ message: "Role updated successfully" });
+            } else {
+                res.status(400).json({ message: "User not found" });
+                }
+                };
+
+                
+app.post("/update/:email" ,updateRole("admin"),async(req,res)=>{
+   res .json({message:"User updated successfully"});
+})
 
