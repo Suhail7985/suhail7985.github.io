@@ -73,23 +73,98 @@ app.post("/login", async (req, res) => {
 });
 
 //update user through email
-//role: admin
-app.post("/update/:email", async (req, res) =>
-  {
-    try {
-      const { email } = req.params; 
-      const { role } = req.body;
-      const existingUser = await userModel.findOne({ email });
-      if (existingUser) {
-        existingUser.role = role;
-        await existingUser.save();
-        res.status(200).json({ message: "User updated successfully" });
-        } else {
-          res.status(400).json({ message: "User not found" });
-          }
-          } catch (err) {
-            console.log(err);
-            res.status(500).json({ message: "Something went wrong" });
-            }
-            });
+//role: admin  post
+// app.post("/update/:email", async (req, res) =>
+//   {
+//     try {
+//       const { email } = req.params; 
+//       const { role } = req.body;
+//       const existingUser = await userModel.findOne({ email });
+//       if (existingUser) {
+//         existingUser.role = role;
+//         await existingUser.save();
+//         res.status(200).json({ message: "User updated successfully" });
+//         } else {
+//           res.status(400).json({ message: "User not found" });
+//           }
+//           } catch (err) {
+//             console.log(err);
+//             res.status(500).json({ message: "Something went wrong" });
+//             }
+//             });
 
+
+//only admin can access the show users using middle ware
+const authenticate = (req, res, next) => {
+  try {
+    let token = req.headers.authorization;
+    token = token.split(" ")[1];
+    const user = jwt.verify(token, SECRET);
+    req.role = user.role;
+    next();
+  } catch (err) {
+    return res.json({ message: "Access Denied" });
+  }
+};
+
+const authorize = (role)=>{
+    return (req, res, next) =>{
+        if (req.role === role) {
+            next();
+        } else {
+          return res.json({ message: "Unauthorized Access"});
+        }
+}
+}
+
+//show all the user from mongodb
+app.get("/showUsers",authenticate, authorize("admin"), async(req,res)=>{
+  try{
+    const result = await userModel.find();
+    res.status(200).json(result);
+  }catch(err) {}
+});
+
+
+
+//update user through id
+//role: admin using patch
+app.patch("/:id",authenticate,authorize("admin"), async(req,res)=>{
+  try{
+  const id = req.params.id;
+  const body =req.body
+  const result = await userModel.findByIdAndUpdate(id,body)
+  res.status(200).json(result);
+  }
+  catch(err){
+    console.log(err);
+    res.status(500).json({ message: "Something went wrong" });
+  }
+})
+
+app.delete("/:id",authenticate,authorize("admin"),async(req,res)=>{
+  try {
+  const id = req.params.id;
+  const result = await userModel.findByIdAndDelete(id)
+  res.status(200).json(result)
+  }
+  catch(err){
+    console.log(err)
+    res.status(400).json({message:"Something went wrong"})
+  }
+
+})
+
+//display perticular user by id 
+app.get("/:id/profile",authenticate,async(req,res)=>{
+  try{
+    const id = req.params.id;
+    const result = await userModel.findOne({_id:id});
+    res.status(200).json(result)
+  }
+  catch(err){
+    console.log(err)
+    res.status(400).json({message:"Something went"})
+  }
+
+})
