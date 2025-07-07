@@ -74,23 +74,22 @@ app.post("/login", async (req, res) => {
 
 //update user through email
 //role: admin
-
-const updateRole = async (req, res) =>
-    {
-        const { email } = req.params;
-        const { role } = req.body;
-        const user = await userModel.findOne({ email });
-        if (user) {
-            user.role = role;
-            await user.save();
-            res.status(200).json({ message: "Role updated successfully" });
-            } else {
-                res.status(400).json({ message: "User not found" });
-                }
-                };
-
-                
-app.post("/update/:email" ,updateRole("admin"),async(req,res)=>{
-   res .json({message:"User updated successfully"});
-})
+app.post("/update/:email", async (req, res) =>
+  {
+    try {
+      const { email } = req.params; 
+      const { role } = req.body;
+      const existingUser = await userModel.findOne({ email });
+      if (existingUser) {
+        existingUser.role = role;
+        await existingUser.save();
+        res.status(200).json({ message: "User updated successfully" });
+        } else {
+          res.status(400).json({ message: "User not found" });
+          }
+          } catch (err) {
+            console.log(err);
+            res.status(500).json({ message: "Something went wrong" });
+            }
+            });
 
