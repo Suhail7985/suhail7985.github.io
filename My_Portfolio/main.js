@@ -1,4 +1,3 @@
-/* ===== mobile menu ===== */
 const navToggle = document.getElementById('navToggle');
 const nav       = document.getElementById('navbar');
 
@@ -18,17 +17,20 @@ window.addEventListener('scroll', () => {
 });
 
 /* ===== contact form basic demo ===== */
-const contactForm = document.getElementById('contactForm');
-const formStatus  = document.getElementById('formStatus');
+window.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contactForm');
+  const formStatus  = document.getElementById('formStatus');
 
-contactForm.addEventListener('submit', e => {
-  e.preventDefault();
-  formStatus.textContent = 'Sending…';
-  
-  // ⚠️  Replace with real endpoint / Nodemailer call
-  setTimeout(() => formStatus.textContent = 'Thank you! I will get back to you soon.', 1000);
+  if (contactForm && formStatus) {
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      formStatus.textContent = 'Sending…';
+
+      // ⚠️  Replace with real endpoint / Nodemailer call
+      setTimeout(() => formStatus.textContent = 'Thank you! I will get back to you soon.', 1000);
+    });
+  }
 });
-
 
 /* ==== DARK-/LIGHT-MODE TOGGLE ==== */
 (function initDarkMode () {
@@ -58,9 +60,7 @@ contactForm.addEventListener('submit', e => {
   }
 })();
 
-
-
-
+/* ==== Scroll Reveal ==== */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -72,3 +72,9 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ===== Ensure projects are shown ===== */
+window.addEventListener('DOMContentLoaded', () => {
+  const projectSection = document.querySelector('#projects');
+  if (projectSection) projectSection.style.display = 'block';
+});

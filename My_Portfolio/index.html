@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohd Suhail | Full-Stack Developer</title>
 
-  <!-- favicon -->
-  <link rel="icon" type="image/png" href="ball.png" />
+  <!-- Meta SEO -->
+  <meta name="description" content="Portfolio of Mohd Suhail, a Full-Stack Developer skilled in React, Node.js, MongoDB and more.">
+  <meta property="og:title" content="Mohd Suhail | Full-Stack Developer">
+  <meta property="og:description" content="I turn ideas into secure, scalable web apps with delightful UX.">
+  <meta property="og:image" content="img/profile.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <!-- ===== HEADER / NAV ===== -->
   <header class="header">
-    <h1 class="brand">Mohd Suhail</h1>
-
-    <!-- mobile toggle -->
-    <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">
-      &#9776;
-    </button>
-
+    <h1 class="brand"><a href="#home">Mohd Suhail</a></h1>
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
     <nav id="navbar" class="nav">
       <a href="#home">Home</a>
       <a href="#projects">Projects</a>
@@ -35,126 +37,136 @@
   <!-- ===== HERO ===== -->
   <section id="home" class="hero">
     <div class="hero__text">
-      <h2>Full-Stack Developer <span class="accent">| MERN </span></h2>
+      <h2>Full-Stack Developer <span class="accent">| MERN</span></h2>
       <p>I turn ideas into secure, scalable web apps and love solving tricky backend problems while keeping UX delightful.</p>
       <div class="cta">
-  <a href="#projects" class="btn">View Projects</a>
-  
-  <a href="resume.pdf" download class="btn">📄 Resume</a>
-</div>
-
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="resume.pdf" download class="btn">📄 Download Resume</a>
+      </div>
     </div>
     <figure class="hero__img">
-      <!-- Put the portrait you uploaded in /img/profile.jpg -->
-      <img src="img/profile.jpg" alt="Portrait of Mohd Suhail in a black suit and glasses">
+      <img src="img/profile.jpg" alt="Portrait of Mohd Suhail in a black suit and glasses" onerror="this.src='img/placeholder.jpg';">
     </figure>
   </section>
 
+  <!-- ===== PROJECTS ===== -->
   <section id="projects" class="section section--alt reveal">
-  <h2 class="section__title">Projects</h2>
-  <div class="project-grid">
+    <h2 class="section__title">Projects</h2>
+    <div class="project-grid">
 
-    <div class="project-card">
-      <img src="img/project1.jpg" alt="ATS Score Checker" class="project-thumb" />
-      <div class="project-content">
-        <h3>ATS Score Checker</h3>
-        <p>MERN web app that scans resumes and ranks them for ATS compatibility.</p>
-        <div class="tags">
-          <span>React</span><span>Node</span><span>MongoDB</span>
-        </div>
-        <div class="project-links">
-          <a href="#" target="_blank" class="btn btn--outline">Live Demo</a>
-          <a href="#" target="_blank" class="btn">Source Code</a>
-        </div>
-      </div>
-    </div>
+     
 
-    <div class="project-card">
-      <img src="img/project2.jpg" alt="Food Ordering System" class="project-thumb" />
-      <div class="project-content">
-        <h3>Online Food Ordering</h3>
-        <p>PHP-MySQL based food platform with admin panel, cart, and order tracking.</p>
-        <div class="tags">
-          <span>PHP</span><span>MySQL</span><span>Bootstrap</span>
-        </div>
-        <div class="project-links">
-          <a href="#" target="_blank" class="btn btn--outline">Live Demo</a>
-          <a href="#" target="_blank" class="btn">Source Code</a>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="img/project2.jpg" alt="The Dessert Lab" class="project-thumb">
+        <div class="project-content">
+          <h3>The Dessert Lab</h3>
+          <ul class="project-points">
+            <li>Full-featured ecommerce platform (MERN Stack)</li>
+            <li>User login, profile dashboard, and admin panel</li>
+            <li>Integrated payment and order management</li>
+            <li>Deployed on Vercel with GitHub integration</li>
+          </ul>
+          <div class="tags">
+            <span>React</span><span>Node</span><span>MongoDB</span><span>Express</span>
+          </div>
+          <div class="project-links">
+            <a href="https://zaika-cafe.vercel.app/" target="_blank" class="btn btn--outline">Live Demo</a>
+            <a href="https://github.com/Suhail7985/cafe-frontend" target="_blank" class="btn">Source Code</a>
+          </div>
         </div>
       </div>
+
+
+       <!-- Project 3 -->
+      <div class="project-card">
+  <img src="img/project3.jpg" alt="To-do App" class="project-thumb">
+  <div class="project-content">
+    <h3>To-do App</h3>
+    <ul class="project-points">
+      <li>Allows users to create, update, and delete personal tasks</li>
+      <li>User authentication with secure JWT-based login system</li>
+      <li>Built with MERN Stack (MongoDB, Express, React, Node.js)</li>
+      <li>Responsive and clean UI for seamless task management</li>
+    </ul>
+    <div class="tags">
+      <span>React</span><span>Node</span><span>MongoDB</span>
     </div>
-
-    <!-- Add more .project-card blocks as needed -->
-
+    <div class="project-links">
+      <a href="https://todo-do-amber.vercel.app/" target="_blank" class="btn btn--outline">Live Demo</a>
+      <a href="https://github.com/Suhail7985/Todo-frontend" target="_blank" class="btn">Source Code</a>
+    </div>
   </div>
-</section>
+</div>
 
+       <!-- Project 1 -->
+      <div class="project-card">
+        <img src="img/project1.jpg" alt="ATS Score Checker" class="project-thumb">
+        <div class="project-content">
+          <h3>ATS Score Checker</h3>
+          <ul class="project-points">
+            <li>Scans resumes to detect ATS keywords and structure</li>
+            <li>Analyzes compatibility and provides score</li>
+            <li>Built with MERN Stack (MongoDB, Express, React, Node.js)</li>
+            <li>Responsive UI optimized for desktops and mobiles</li>
+          </ul>
+          <div class="tags">
+            <span>React</span><span>Node</span><span>MongoDB</span>
+          </div>
+          <div class="project-links">
+            <a href="https://cvglass.onrender.com/" target="_blank" class="btn btn--outline">Live Demo</a>
+            <a href="https://github.com/Suhail7985/ATS-SCORE-Checker" target="_blank" class="btn">Source Code</a>
+          </div>
+        </div>
+      </div>
 
-  <!-- ===== SERVICES ===== -->
-  <section id="services" class="section section--alt">
-    <h2 class="section__title">Services</h2>
-    <div class="service-grid">
-      <div class="service">
-        <h3>Web App Development</h3>
-        <p>SPA/PWA development with React + Vite, server-side rendered Next.js when SEO matters.</p>
-      </div>
-      <div class="service">
-        <h3>Backend APIs</h3>
-        <p>REST & GraphQL APIs in Node/Express or Laravel, dockerized and CI/CD-ready.</p>
-      </div>
-      <div class="service">
-        <h3>Performance & SEO</h3>
-        <p>Core-Web-Vitals audits, page-speed optimisation, structured-data & Lighthouse 99/100.</p>
-      </div>
     </div>
   </section>
 
-  <!-- About Section -->
-<section id="about" class="section reveal">
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section reveal">
+    <h2 class="section__title">Services</h2>
+    <ul class="service-list">
+      <li>⚙️ Web App Development (React, Node.js, MongoDB)</li>
+      <li>🎨 UI/UX Design for modern, responsive websites</li>
+      <li>🔐 Secure Authentication & Authorization (JWT, OAuth)</li>
+      <li>🚀 Deployment on Vercel, Netlify, and AWS</li>
+    </ul>
+  </section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section section--alt reveal">
   <h2 class="section__title">About Me</h2>
-
-  <p>
-    2<sup>+</sup> years crafting full-stack solutions and 150+ LeetCode problems cracked.
-    When I’m not coding you’ll catch me reading about systems design or playing CTF challenges.
-  </p>
-
-  <h3>Skills &amp; Tools</h3>
-  <ul class="skills">
-    <li>C++</li><li>JavaScript</li><li>PHP</li><li>Node.js</li>
-    <li>React</li><li>MongoDB</li><li>MySQL</li><li>Git</li>
+  <ul class="about-points">
+    <li>🚀 I'm <strong>Mohd Suhail</strong>, a passionate Full-Stack Developer proficient in the <strong>MERN stack</strong> — MongoDB, Express.js, React, and Node.js.</li>
+    <li>🧠 I love solving complex problems and writing <strong>clean, maintainable, and scalable code</strong> for real-world applications.</li>
+    <li>🎨 I craft responsive and user-friendly interfaces that combine <strong>aesthetic design</strong> with seamless functionality.</li>
+    <li>🛠️ Experienced in developing both frontend and backend features with <strong>REST APIs, JWT authentication, and MongoDB schemas</strong>.</li>
+    <li>💻 Familiar with deployment on platforms like <strong>Vercel, Render, and Netlify</strong>, and managing projects with Git and GitHub.</li>
+    <li>📈 I prioritize performance and accessibility, ensuring fast load times and smooth user experiences on all devices.</li>
+    <li>📚 Lifelong learner always exploring new tools — recently diving into <strong>Next.js, Tailwind CSS, and TypeScript</strong>.</li>
+    <li>🤝 Strong communicator and team player, I thrive in collaborative environments and enjoy building projects from scratch to scale.</li>
   </ul>
 </section>
 
-
   <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section section--alt">
-    <h2 class="section__title">Get In Touch</h2>
-    <div class="contact-grid">
-      <!-- contact form -->
-      <form id="contactForm" class="contact-form">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" rows="6" placeholder="Message" required></textarea>
-        <button type="submit" class="btn">Send</button>
-        <p id="formStatus" class="form-status"></p>
-      </form>
-
-      <!-- contact details -->
-      <address class="contact-details">
-        <p><strong>Location :</strong> Phagwara, Punjab</p>
-        <p><strong>Email :</strong> <a href="mailto:suhailmansoori7985@gmail.com">suhailmansoori7985@gmail.com</a></p>
-        <p><strong>Phone :</strong> <a href="tel:+919555635456">+91 95556 35456</a></p>
-        <p><strong>LinkedIn :</strong> <a target="_blank" href="https://linkedin.com/in/mohdsuhail01/">/mohdsuhail01</a></p>
-        <p><strong>GitHub :</strong> <a target="_blank" href="https://github.com/Suhail7985">/Suhail7985</a></p>
-      </address>
-    </div>
+  <section id="contact" class="section reveal">
+    <h2 class="section__title">Contact Me</h2>
+    <form id="contactForm" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <div id="formStatus" class="form-status"></div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    © 2025 Mohd Suhail. All rights reserved.
+    <p>© 2025 Mohd Suhail. All rights reserved.</p>
   </footer>
 
+  <!-- ===== SCRIPTS ===== -->
   <script src="main.js"></script>
 </body>
 </html>
